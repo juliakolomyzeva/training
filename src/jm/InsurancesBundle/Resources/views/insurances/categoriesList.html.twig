@@ -1,0 +1,35 @@
+{# jm/InsurancesBundle/Resources/views/insurances/categoriesList.html.twig #}
+{% extends "@Insurances/layout.html.twig" %}
+
+{% block title mainCategoryName %}
+
+{% block content %}
+    <h3>{{ mainCategoryName }}</h3>
+    {% if subCategories is not empty %}
+    <h4>Categories</h4>
+    <ul class="cat_tree">
+        {% for category in subCategories %}
+            <li>
+                <a href="{{ path('show_children', {'categoryName': category.name}) }}">
+                    {{ category.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {#
+    {{ render(controller(
+    'InsurancesBundle:Insurances:recentArticles',
+    { 'max': 3 }
+    )) }}
+    <ul class="cat_tree">
+        {% for category in subCategories %}
+            <li>
+                <a href="{{ path('show_children', {'categoryName': category.name}) }}">
+                    {{ category.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>#}
+
+{% endblock %}

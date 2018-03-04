@@ -1,0 +1,56 @@
+{% extends '@Hangman/layout.html.twig' %}
+{% block content %}
+<h2>{{ 'game.play.headline'|trans }}</h2>
+
+{% dump(game) %}
+<p class="attempts">
+    {{ 'game.play.attemps'|transchoice(game.remainingAttempts) }}
+</p>
+
+<ul class="word_letters">
+    {% for letter in game.wordLetters %}
+        {% if game.letterFound(letter) %}
+
+            <li class="letter guessed">
+                {{ letter }}
+            </li>
+        {% else %}
+            <li class="letter">
+                ?
+            </li>
+
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<br class="clearfix" />
+
+<p class="attempts">
+    <a href="{{ path('reset_game') }}">{{ 'game.reset'|trans }}</a>
+</p>
+
+<br class="clearfix" />
+
+<h2>{{ 'game.try_letter'|trans }}</h2>
+
+<ul>
+    {% for letter in 'A'..'Z' %}
+    <li class="letter">
+        <a href="{{ path('app_play_letter', {letter: letter}) }}">
+            {{ letter }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+
+<h2>{{ 'game.try_world'|trans }}</h2>
+
+<form action={{ path("app_play_word") }} method="post">
+    <p>
+        <label for="word">Word:</label>
+        <input type="text" id="word" name="word"/>
+        <button type="submit">Let me guess...</button>
+    </p>
+</form>
+{% endblock %}

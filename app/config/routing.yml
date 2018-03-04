@@ -1,0 +1,13 @@
+insurances:
+    resource: "@InsurancesBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+library:
+    resource: "@LibraryBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@HangmanBundle/Controller/'
+    type: annotation

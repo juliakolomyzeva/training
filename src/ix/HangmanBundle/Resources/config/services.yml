@@ -1,0 +1,49 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    _defaults:
+        autowire: true
+        public: false
+
+    ix\HangmanBundle\Contact\ContactMailer:
+        arguments:
+            $recipient: '%contact_email%'
+        public: true
+
+    ix\HangmanBundle\Game\GameContext: ~
+
+    ix\HangmanBundle\Game\Loader\TextFileLoader: ~
+
+    ix\HangmanBundle\Game\Loader\XmlFileLoader: ~
+
+    ix\HangmanBundle\Game\WordList:
+        calls:
+            - ['addLoader',['txt', '@ix\HangmanBundle\Game\Loader\TextFileLoader']]
+            - ['addLoader',['xml', '@ix\HangmanBundle\Game\Loader\XmlFileLoader']]
+            - ['loadDictionaries',['%dictionaries%']]
+
+    ix\HangmanBundle\Game\GameRunner:
+        public: true
+
+    ix\HangmanBundle\Security\RegistrationService:
+        public: true
+
+    ix\HangmanBundle\Controller\:
+        resource: '../../Controller'
+        public: true
+        tags: ['controller.service_arguments']
+
+    jm\InsurancesBundle\Contact\ContactMailer:
+        arguments:
+            $recipient: '%contact_email%'
+        public: true
+
+    jm\InsurancesBundle\Entity\RelCategoryRepository:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - jm\InsurancesBundle\Entity\RelCategory
+

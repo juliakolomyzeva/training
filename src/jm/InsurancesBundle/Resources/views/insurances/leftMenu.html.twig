@@ -1,0 +1,60 @@
+<div class="left_menu">
+    {% if categories is not empty %}
+        <div class="nav_header">Versicherungen</div>
+        <ul class="cat_tree">
+            {% for category in categories %}
+                {% if category.selected %}
+                    <li class="cat_selected">
+                {% else %}
+                    <li>
+                {% endif %}
+                    {% set subCategories = category.children %}
+                    {% set parent = category.parent %}
+                    {% if parent is empty %}
+                        {% if subCategories|length > 0 %}
+                            {{ category.name }}
+                            <ul class="cat_subtree">
+                                {% for subCategory in subCategories %}
+                                    {% if subCategory.selected %}
+                                        <li class="li_cat cat_selected">
+                                    {% else %}
+                                        <li class="li_cat">
+                                    {% endif %}
+                                        <a class="a_cat" href="{{ path('show_relinsurances_list', {'categoryId': subCategory.id}) }}">
+                                            {{ subCategory.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <a class="a_cat" href="{{ path('show_relinsurances_list', {'categoryId': category.id}) }}">
+                                {{ category.name }}
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+{#
+<script>
+        $(document).on('click','button',function(){
+                $.ajax('{{ path('remove_category') }}', {
+                        data: {
+                        // you can pass some parameters to the controller here
+                            "categoryName": "Email"
+                        },
+                        success: function(data) {
+                        // change button color
+                        },
+                        error: function() {
+                        // show alert or something
+                        }
+                        });
+                return false; // this stops normal button behaviour from executing;
+
+        });
+</script>
+#}

@@ -1,0 +1,16 @@
+PHP Symfony
+
+1. Server Starten
+ - wechseln in den aktuellen Projekt, z.B. cd projects/training
+ - Aufrufen : php bin/console server:run
+ 
+2. Composer
+Composer solves the following problems:
+- dependency resolution for PHP packages
+- autoloading solution for PHP packages
+- keeping all packages updated
+- Composer füllt das /vendor-Verzeichnis mit den Dependencies
+
+Create a new Bundle: 
+ - https://symfony.com/doc/current/bundles/SensioGeneratorBundle/commands/generate_bundle.html
+ - Sehr wichtig: In jedem Controller: use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route; einzufügen!

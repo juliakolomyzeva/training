@@ -1,0 +1,25 @@
+{# jm/InsurancesBundle/Resources/views/insurances/createInsurance.html.twig #}
+{% extends "@Insurances/layout.html.twig" %}
+
+{% block title 'Create Insurance' %}
+{% block content %}
+    <div class="create_form">
+        <h1>Insurance</h1>
+        {{ form_start(form) }}
+            {{ form_row(form.parent_category) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.provider) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.street) }}
+            {{ form_row(form.location) }}
+            {{ form_row(form.zip) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.tel) }}
+            {{ form_row(form.opening_time) }}
+            {{ form_row(form.notice) }}
+
+            <button class="std_button" type="submit">Save</button>
+            <button class="std_button" type="reset">Reset</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

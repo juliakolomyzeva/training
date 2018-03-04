@@ -1,0 +1,5 @@
+game.play.headline: 'Guess the mysterious word'
+game.reset: 'Reset the Game'
+game.try_letter: 'Try a letter'
+game.try_world: 'Try a word'
+game.play.attemps: '{1} Uh-Oh!... just on left %count%!|[2,5] Hurry up %count% ! You still have %count% remaining attempts.|[6,Inf] Hurry up!'

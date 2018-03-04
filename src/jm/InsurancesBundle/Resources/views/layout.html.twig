@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{#<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Insurances</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+</head>
+<body>#}
+{% block title 'Insurances '%}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/insurances/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/insurances/css/insurances.css') }}" />
+{% endblock %}
+{% block body %}
+<div class="container" id="main">
+    <div class="row" id="header_row">
+        {% block header %}
+            {{ include('@Insurances/layout/header.html.twig') }}
+        {% endblock %}
+    </div>
+    <div class="row" id="body_row">
+        <div class="container" id="body_container">
+            <div class="row">
+                <div class="col-md-4" id="nav_area">
+                   {{ render(controller(
+                    'InsurancesBundle:RelCategory:showCategoryMenu'
+                    )) }}
+                </div>
+                <div class="col-md-8" id="content_area">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="footer_row">
+        {% block footer %}
+            Meine Versicherungen Footer
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
+{#
+</body>
+</html>#}

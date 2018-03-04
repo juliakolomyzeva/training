@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        public: false
+
+    # controllers are imported separately to make sure they're public
+    # and have a tag that allows actions to type-hint services
+    jm\InsurancesBundle\Controller\:
+        resource: '../../Controller'
+        tags: ['controller.service_arguments']
+
+    #jm\InsurancesBundle\Service\CategoryManager:
+    #    public: true

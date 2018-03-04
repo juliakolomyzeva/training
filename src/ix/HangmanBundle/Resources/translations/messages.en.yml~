@@ -1,0 +1,4 @@
+game.play.headline: 'Guess the mysterious word'
+game.reset: 'Reset the Game'
+game.try_letter: 'Try a letter'
+game.try_world: 'Try a word'

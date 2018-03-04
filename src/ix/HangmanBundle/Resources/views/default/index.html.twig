@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{#{% block title %}
+    {{ parent() }} - Hello {{ name }}
+
+{% endblock %}#}
+{% block title parent() ~ ' Hello ' ~ name ~ '!' %}
+{% block body %}
+{{ include('menu.html.twig') }}
+
+Hello World {{ name }}
+{{ include('menu.html.twig', {name: 'Test1'}, with_context = false) }}
+{{ include('menu.html.twig', {name: 'Test2'}) }}
+{{ include('menu.html.twig') }}
+{% endblock %}

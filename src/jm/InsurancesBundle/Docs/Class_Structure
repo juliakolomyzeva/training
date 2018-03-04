@@ -1,0 +1,43 @@
+Classes for Categories Management:
+Entity:
+	Category.php
+Service:
+	CategoriesManager.php
+		Functions:
+			saveCategory(...);
+			removeCategory(...);
+			getCategoriesByParentID(...);
+			getCategoryByID(...);
+			getCategoryByName(...);
+			.....
+			
+Classes for Insurances Management:
+Entity:
+	Insurance.php
+Service:
+	InsurancesManager.php
+		Functions:
+			saveInsurance(...);
+			removeInsurance(...);
+			getInsurancesByCategorieID(...);
+			getInsuranceByID(...);
+			getInsuranceByName(...);
+			.....
+			
+FrontendController:
+
+	InsurencesManagementController.php:
+
+	use jm\InsurancesBundle\Management\CategoriesManager;
+	use jm\InsurancesBundle\Management\InsurancesManager;
+	
+	Functions:
+		startAction(...);(= indexAction(...);)
+		showLeftMenuAction(...);
+		createCategoryAction(...);
+		editCategoryAction(...);
+		createInsuranceAction(...);
+		editInsuranceAction(...);
+		showInsuranceAction(...);
+		...
+		...

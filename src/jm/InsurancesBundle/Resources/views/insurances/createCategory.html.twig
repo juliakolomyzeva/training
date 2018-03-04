@@ -1,0 +1,15 @@
+{# jm/InsurancesBundle/Resources/views/insurances/createCategory.html.twig #}
+{% extends "@Insurances/layout.html.twig" %}
+
+{% block title 'Create Category' %}
+{% block content %}
+    <div class="create_form">
+        <h1>Create Category</h1>
+        {{ form_start(form) }}
+            {{ form_row(form.parent_category) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.description) }}
+            <button class="std_button" type="submit">Create</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

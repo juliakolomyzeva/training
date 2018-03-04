@@ -1,0 +1,5 @@
+game.play.headline: __game.play.headline
+game.play.attemps: '{1} Uh-Oh!... %count%!|[2,5] Beeile Dich %count% ! Du hast schon %count% remaining attempts.|[6,Inf] beeile!'
+game.reset: __game.reset
+game.try_letter: __game.try_letter
+game.try_world: __game.try_world

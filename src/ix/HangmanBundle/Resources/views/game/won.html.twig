@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+
+    <h2>Congratulations!</h2>
+
+    <p>
+        You found the word <strong>{{ game.word }}</strong> and won this game.
+    </p>
+
+    <p class="attempts">
+        <a href="{{ path('app_game') }}">Reset the game</a>
+    </p>
+
+{% endblock %}

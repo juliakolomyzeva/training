@@ -1,0 +1,3 @@
+insurances_homepage:
+    path:     /
+    defaults: { _controller: InsurancesBundle:Default:index }

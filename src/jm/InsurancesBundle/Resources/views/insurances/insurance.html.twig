@@ -1,0 +1,123 @@
+{# jm/InsurancesBundle/Resources/views/insurances/insurance.html.twig #}
+{% extends "@Insurances/layout.html.twig" %}
+
+{% block title insurance.name %}
+
+{% block content %}
+    <div class="show_wrap">
+        <h1>{{ insurance.name }}</h1>
+        <div class="insurance_wrap">
+            <div class="insurance_logo"></div>
+            <div class="insurance_fields">
+                <div class="insurance_field">
+                    <div class="field_label">Name:</div>
+                    <div class="field_value">
+                        {% if insurance.name is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.name }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="insurance_field">
+                    <div class="field_label">Provider:</div>
+                    <div class="field_value">
+                        {% if insurance.provider is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.provider }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="insurance_field">
+                    <div class="field_label">Description:</div>
+                    <div class="field_value">
+                        {% if insurance.description is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.description }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="insurance_field">
+                    <div class="field_label">Street:</div>
+                    <div class="field_value">
+                        {% if insurance.street is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.street }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="insurance_field">
+                    <div class="field_label">Location:</div>
+                    <div class="field_value">
+                        {% if insurance.location is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.location }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="insurance_field">
+                    <div class="field_label">ZIP:</div>
+                    <div class="field_value">
+                        {% if insurance.zip is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.zip }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="insurance_field">
+                    <div class="field_label">Email:</div>
+                    <div class="field_value">
+                        {% if insurance.email is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.email }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="insurance_field">
+                    <div class="field_label">Tel:</div>
+                    <div class="field_value">
+                        {% if insurance.tel is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.tel }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="insurance_field">
+                    <div class="field_label">Opening Time:</div>
+                    <div class="field_value">
+                        {% if insurance.openingTime is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.openingTime }}
+                        {% endif %}
+                    </div>
+                </div>
+                {#  <dt>Known Species:</dt>
+                  <dd>{{ insurance.speciesCount|number_format }}</dd> #}
+                <div class="insurance_field">
+                    <div class="field_label">Notice:</div>
+                    <div class="field_value">
+                        {% if insurance.notice is empty %}
+                            --
+                        {% else %}
+                            {{ insurance.notice }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="js-notes-wrapper"></div>
+        <a href="{{ path('edit_relinsurance', {'insuranceId': insurance.id})}}">
+            <div class="std_button">
+                Edit insurance
+            </div>
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,528 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 3.0 License
+
+Name       : Resolved
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120125
+*/
+
+/*
+ Web fonts
+ ---------
+    Copyright (c) 2010, Anton Koovit (<anton@korkork.com>),
+    with Reserved Font Name Arvo.
+
+    Downloaded from http://www.google.com/fonts/specimen/Arvo
+
+    This Font Software is licensed under the SIL Open Font License, Version 1.1.
+    This license is copied below, and is also available with a FAQ at:
+    http://scripts.sil.org/OFL
+ */
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arvo'), url('../fonts/arvo-400-normal.woff') format('woff');
+}
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arvo Bold'), local('Arvo-Bold'), url('../fonts/arvo-700-normal.woff') format('woff');
+}
+@font-face {
+  font-family: 'Arvo';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Arvo Italic'), local('Arvo-Italic'), url('../fonts/arvo-400-italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Arvo';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Arvo Bold Italic'), local('Arvo-BoldItalic'), url('../fonts/arvo-700-italic.woff') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: underline;
+    color: #6B2E42;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    background: #C9CFCD url(../images/img01.gif);
+    font-size: 14pt;
+    color: #323232;
+    line-height: 1.75em;
+}
+
+body,input {
+    font-family: Arial, sans-serif;
+}
+
+strong {
+    color: #222222;
+}
+
+br.clearfix {
+    clear: both;
+}
+
+h1,h2,h3,h4 {
+    letter-spacing: -1px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 2.25em;
+}
+
+h2,h3,h4 {
+    color: #000405;
+    font-family: Arvo, serif;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+img.aligntop {
+    margin: 5px 0 20px 0;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+ul {
+    margin-bottom: 1.5em;
+}
+
+ul h4 {
+    margin-bottom: 0.35em;
+}
+
+#content {
+    background: #FFFFFF;
+    width: 595px;
+    color: #6E6E6E;
+    padding: 45px 35px 0 35px;
+    float: left;
+    border-bottom: solid 2px #BBC1BF;
+}
+
+#content h2, #content h3, #content h4 {
+    color: #171717;
+}
+
+#footer {
+    padding: 30px 0 80px 0;
+    text-align: center;
+    margin: 0 0 20px 0;
+    color: #808384;
+    text-transform: lowercase;
+}
+
+#footer a {
+    color: #808384;
+}
+
+#header {
+    height: 80px;
+    position: relative;
+    padding: 35px;
+}
+
+#logo {
+    position: absolute;
+    left: 35px;
+    line-height: 110px;
+    height: 110px;
+    top: 35px;
+}
+
+#logo a {
+    text-decoration: none;
+    color: #000405;
+}
+
+#logo h1 {
+    font-family: Arvo, serif;
+    font-size: 3em;
+}
+
+#menu {
+    line-height: 60px;
+    position: absolute;
+    font-family: Arvo, serif;
+    background: #6B2E42 url(../images/img02.gif);
+    top: 66px;
+    right: 0;
+    height: 60px;
+    border: solid 1px #CA8B9F;
+}
+
+#menu a {
+    font-size: 1.5em;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#menu ul {
+    padding: 0 15px 0 15px;
+    list-style: none;
+}
+
+#menu ul li {
+    display: inline;
+    padding: 0 10px 0 10px;
+}
+
+#page {
+    margin: 20px 0 20px 0;
+    position: relative;
+    width: 980px;
+    padding: 0;
+}
+
+#page .section-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+#page .section-list li {
+    clear: both;
+    padding: 20px 0 20px 0;
+}
+
+#page ul {
+    list-style: none;
+}
+
+#page ul li {
+    padding: 10px 0 10px 0;
+    border-top: solid 1px #D9D9D9;
+}
+
+#page ul li.first {
+    padding-top: 0;
+    border-top: 0;
+}
+
+#post1 {
+    width: 595px;
+    overflow: hidden;
+    margin: 0 0 35px 0;
+}
+
+#post2 {
+    width: 280px;
+    float: left;
+    overflow: hidden;
+}
+
+#post3 {
+    overflow: hidden;
+    margin: 0 0 0 315px;
+    width: 280px;
+}
+
+#search input.form-submit {
+    border: 0;
+    background: #6B2E42;
+    margin-left: 1em;
+    color: #FFFFFF;
+    padding: 5px;
+    font-family: Arvo, serif;
+}
+
+#search input.form-text {
+    border: solid 1px #84908D;
+    padding: 5px;
+}
+
+#sidebar {
+    background: #FFFFFF;
+    margin: 0 0 0 685px;
+    color: #6E6E6E;
+    padding: 45px 35px 45px 35px;
+    width: 225px;
+    border-bottom: solid 2px #BBC1BF;
+}
+
+#sidebar h2, #sidebar h3, #sidebar h4 {
+    color: #000000;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar ul li {
+    padding: 10px 0 10px 0;
+    border-top: solid 1px #D9D9D9;
+}
+
+#sidebar ul li.first {
+    border-top: 0;
+    padding-top: 0;
+}
+
+#wrapper {
+    width: 980px;
+    margin: 35px auto 0 auto;
+    position: relative;
+}
+
+#page .attempts {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+#page .word_letters {
+    text-align: center;
+    height: 30px;
+}
+
+#page .letter a {
+    color: #fff;
+}
+
+#page .letter {
+    padding: 0;
+    display: inline-block;
+    border: 1px solid #CA8B9F;
+    background: #934041;
+    color: #fff;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#page .guessed {
+    background: green;
+}
+
+/*Incurances Bundle*/
+#main #body_container .row {
+    display: flex;
+}
+#body_container {
+    background-color: darkgray;
+    padding-bottom: 15px;
+}
+/*Header*/
+.ins_header {
+    display: flex;
+    width: 100%;
+    background-color: #6B2E42;
+    height: 100%;
+    justify-content: space-around;
+}
+.ins_header a, .create_form h1, .show_wrap h1 {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.header_button {
+    padding: 20px;
+}
+/*Main Part*/
+img.main_content_img {
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    box-shadow: 6px 6px 8px 0px grey;
+}
+#content_area {
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+/*Overview*/
+.overview_wrap {
+     display: flex;
+ }
+.overview {
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 6px 6px 8px 0px grey;
+    border: 1px solid darkgrey;
+    margin-top: 10px;
+}
+.ins_preview {
+    width: 235px;
+    height: 150px;
+    background-color: #ffffff;
+    margin: 10px 15px 10px 15px;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 6px 6px 8px 0px grey;
+    border: 1px solid darkgrey;
+}
+.preview_body {
+    padding: 10px;
+    font-size: 16px;
+}
+.ins_preview a{
+    text-decoration: none;
+}
+.preview_header, .overview_header {
+    text-align: center;
+    background-color: #6B2E42;
+    color: #ffffff;
+}
+.overview_header h3 {
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 0;
+    font-size: 29px;
+}
+/*Form*/
+.control-label {
+    width: 160px;
+    display: inline-block;
+}
+.form-control {
+    width: 250px;
+    margin-left: 30px;
+    display: inline;
+}
+.insurance_field {
+    display: flex;
+}
+.insurance_field .field_label {
+    font-weight: bold;
+    width: 150px;
+}
+.std_button{
+    background-color: #6B2E42;
+    color: #ffffff;
+    padding: 5px 15px;
+}
+
+.std_button{
+    background: #963e5b;
+    background-image: -webkit-linear-gradient(top, #963e5b, #6b2e42);
+    background-image: -moz-linear-gradient(top, #963e5b, #6b2e42);
+    background-image: -ms-linear-gradient(top, #963e5b, #6b2e42);
+    background-image: -o-linear-gradient(top, #963e5b, #6b2e42);
+    background-image: linear-gradient(to bottom, #963e5b, #6b2e42);
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: buttonface;
+    border-image: auto;
+    margin: 20px 10px 20px 15px;
+    width: 235px;
+    text-align: center;
+}
+
+.std_button:hover {
+    background: #a84667;
+    background-image: -webkit-linear-gradient(top, #a84667, #873953);
+    background-image: -moz-linear-gradient(top, #a84667, #873953);
+    background-image: -ms-linear-gradient(top, #a84667, #873953);
+    background-image: -o-linear-gradient(top, #a84667, #873953);
+    background-image: linear-gradient(to bottom, #a84667, #873953);
+    text-decoration: none;
+}
+
+.std_button:active {
+    border-width: 1px;
+    border-style: solid;
+    border-color: buttonface;
+    border-image: auto;
+    outline: none;
+}
+/*Create Category*/
+.create_form, .show_wrap{
+    width: 100%;
+    background-color: #ffffff;
+    height: 100%;
+    margin-bottom: 10px;
+}
+.create_form h1, .show_wrap h1 {
+    display: flex;
+    width: 100%;
+    background-color: #6B2E42;
+    padding: 5px;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.create_form form, .show_wrap .insurance_wrap{
+    margin: 10px 20px;
+}
+/*Footer*/
+/*  Left Menu */
+#nav_area, .create_form, .show_wrap {
+    background-color: #fff;
+    box-shadow: 6px 6px 8px 0px grey;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 16px;
+    margin: 10px 0px 0px 10px;
+}
+#nav_area .left_menu .nav_header {
+    background-color: #6B2E42;
+    color: #ffffff;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 14pt;
+}
+ul.cat_tree{
+    margin: 10px;
+}
+.left_menu li {
+    list-style: none;
+    font-size: 18px;
+}
+.left_menu li {
+    list-style: none;
+    font-size: 18px;
+}
+.left_menu li a:active, .left_menu .cat_selected, .left_menu .cat_selected a, left_menu a:hover{
+    background-color: #6B2E42;
+    color: #ffffff;
+}
+.left_menu .cat_subtree a{
+    margin-left: 35px;
+}
+
+.left_menu a {
+    text-decoration: none;
+}

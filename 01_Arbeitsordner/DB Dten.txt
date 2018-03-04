@@ -1,0 +1,54 @@
+Versicherugs Daten
+
+1. Versicherungsnehmer
+ - id
+ - Name
+ - Vornahme
+ - Geb.Datum
+ - Benutzername
+ - Password
+ - is_admin
+ 
+2. Versicherungen
+ - id
+ - Versicherungsname
+ - Anbieter
+ - Beschreibung
+ - Vertreter Name
+ - Vertreter Telefon 
+ - Versicherugsnummer
+ - Monatsrate
+ - Laufzeit
+ - Abschlußdatum
+ - Änderungsdatum
+ - Ablaufdatum
+ - Versicherungssumme
+ - Auszahlungsrate
+ - Auszahlungszeitraum
+ - parent_id (rel Kategorie)
+ - company_id (Rel Anbieter)
+ - user_id (Rel Versicherungsnehmer)
+ 
+3. Anbieter
+ - id
+ - Name
+ - Straße/Hausnummer
+ - Ort
+ - PLZ
+ - Email
+ - Telefon
+ - Öffnungszeiten
+ - Bemerkung
+ 
+4. Kategorien
+ - id
+ - parent_id (Hauptkategory)
+ - Name
+ - Beschreibung
+ 
+ Verknüpfungen
+ 
+ Versicherungsnehmer : Versicherung -> m:n
+ Anbieter : Versicherung -> 1:n
+ Kategorien : Versicherung -> 1:n
+ Kategorien : Kategorien -> 1:n (sel ref.)
